@@ -31,8 +31,42 @@ int main()
         {
             for (int j = 0; j < 2 * (n - i) - 5; j++)
             {
-                cout<<" ";
+                cout << " ";
             }
+            cout << "*";
+        }
+        cout << endl;
+    }
+    // printing butterfly pattern using starts(*)
+    int m = 4;
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < (m - i - 1) * 2; j++)
+        {
+            cout << " ";
+        }
+
+        // right stars
+        for (int j = 0; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    //bottom half
+    for (int i = m-1; i >= 0; i--)
+    {
+        for(int j = 0; j<=i ; j++){
+            cout<<"*";
+        }
+        for(int j = 0 ; j < (m - i - 1)*2; j++){
+            cout<<" ";
+        }
+        for(int j = 0 ; j<= i; j++){
             cout<<"*";
         }
         cout<<endl;
