@@ -118,19 +118,39 @@ int main()
     }
     cout<<endl;
     //again hallow diamond
-    int p = 4;
-    for(int i =0; i < p; i++){
-        for(int j = 0; j < p-i-1; j++){
-            cout<<" ";
+    int p = 4;             // size (half height). change this to scale the diamond
+    if (p <= 0) return 0;
+
+    // TOP including middle line
+    for (int i = 0; i < p; i++) {
+        // leading spaces
+        for (int j = 0; j < p - 1 - i; j++) cout << " ";
+
+        // left star
+        cout << "*";
+
+        // inside spaces and right star (only when i > 0)
+        if (i > 0) {
+            for (int j = 0; j < 2 * i - 1; j++) cout << " ";
+            cout << "*";
         }
-        cout<<"*";
-        if(i!=0){
-            for(int j = 0; j< 2*i-1; j++){
-                cout<<" ";
-            }
-            cout<<"*";
+        cout << "\n";
+    }
+
+    // BOTTOM (mirror of top, skip the middle line)
+    for (int i = p - 2; i >= 0; i--) {
+        // leading spaces
+        for (int j = 0; j < p - 1 - i; j++) cout << " ";
+
+        // left star
+        cout << "*";
+
+        // inside spaces and right star (only when i > 0)
+        if (i > 0) {
+            for (int j = 0; j < 2 * i - 1; j++) cout << " ";
+            cout << "*";
         }
-        cout<<endl;
+        cout << "\n";
     }
     return 0;
 }
