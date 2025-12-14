@@ -57,7 +57,7 @@ int main()
         }
         cout << endl;
     }
-    //bottom half
+    // bottom half
     for (int i = m-1; i >= 0; i--)
     {
         for(int j = 0; j<=i ; j++){

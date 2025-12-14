@@ -12,6 +12,8 @@ int main(){
         ans = ans + (rem*pow);
         pow = pow*10;
     }
-    cout<<ans;
+    cout<< ans<<endl;
+
+    //binary to decimal numnbers
     return 0;
 }
