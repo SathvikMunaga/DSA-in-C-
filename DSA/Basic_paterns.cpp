@@ -1,7 +1,71 @@
 #include <iostream>
 using namespace std;
 // written the some patterns using function
-// tar cross
+//glass
+void glass(int n){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < i; j++){
+            cout<<" ";
+        }
+        for(int j = 0; j < 2*(n-i)-1; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    for(int i = 1; i < n ; i++){
+        for(int j = 0; j < n - i - 1; j++)
+        {
+            cout<<" ";
+        }
+        for(int j = 0; j < 2*i+1 ; j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+//concentric square
+void concentric(int n){
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(i == 0 || i == n-1 || j == 0 || j == n - 1)
+            {
+                cout<<"1";
+            }
+            else if(i == 1 || i == n - 2 || j == 1 || j == n-2)
+            {
+                cout<<"2";
+            }
+            else{
+                cout<<"3";
+            }
+            // cout<<endl;
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+//hallow square
+void square(int n){
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(j == 0 || j == n-1 || i == 0 || i == n-1){
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+// star cross
 void cross(int n)
 {
     for (int i = 0; i < n; i++)
@@ -14,13 +78,13 @@ void cross(int n)
                 cout << " ";
         }
         cout << endl;
-    }}
+    }cout<<endl;}
     // hour glass pattern
     /*     * * * *
-     * *
-     *
-     * *
-     * * * *
+             * *
+              *
+             * *
+           * * * *
      */
     int hour_glass(int n)
     {
@@ -340,5 +404,8 @@ void cross(int n)
         zero_one(5);
         hour_glass(4);
         cross(7);
+        square(5);
+        concentric(5);
+        glass(5);
         return 0;
     }
