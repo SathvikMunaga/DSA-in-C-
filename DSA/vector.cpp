@@ -1,9 +1,41 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
+// Linear search operation on vector
+int Linear(const vector<int> &nums, int target)
+{
+    int index = 0;
+    for (int val : nums)
+    {
+        if (val == target)
+            return index;
+        index++;
+    }
+    return -1;
+    cout << endl;
+}
+// reverse the vector suing in function
+void rev(vector<int>& new1)
+{
+    reverse(new1.begin(), new1.end());
+}
+
 int main()
 {
-    int arr[] = {1,2,3};
-    cout<<arr[0];
+    const vector<int> nums = {1, 2, 3, 4};
+    int target = 4;
+    int result = Linear(nums, target);
+    if (result != -1)
+        cout << "Found at index " << result;
+    else
+        cout << "Not found";
+    cout<<endl;
+    vector<int> new1 = {1,2,3,4};
+    rev(new1);
+    for (int val : new1)
+    {
+        cout << val << " ";
+    }
     return 0;
 }
