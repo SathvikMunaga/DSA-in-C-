@@ -37,5 +37,20 @@ int main()
     {
         cout << val << " ";
     }
+    //Brute forec maximum subarray sum
+    cout<<endl;
+    int n = 5;
+    int arr[5] = {1,2,3,4,5};
+    int maxsum = INT_MIN;
+    for(int st = 0; st < n; st++)
+    {
+        int csum = 0;
+        for(int end = st; end < n; end++)
+        {
+            csum += arr[end];
+            maxsum = max(csum, maxsum);
+        }
+    }
+    cout<<"Maximum sum of Subarray is "<<maxsum<<endl;
     return 0;
 }
