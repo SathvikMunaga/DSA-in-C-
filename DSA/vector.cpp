@@ -2,6 +2,24 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+//brute force approach for pair sum
+vector<int> pairSum(vector<int> num, int target)
+{
+    vector<int> ans;
+    int n = num.size();
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = i+1; j < n; j++)
+        {
+            if ( num[i] + num[j] == target){
+                ans.push_back(i);
+                ans.push_back(j);
+                return ans;
+            }
+        }
+    }
+    return ans;
+}
 // Linear search operation on vector
 int Linear(const vector<int> &nums, int target)
 {
@@ -52,5 +70,11 @@ int main()
         }
     }
     cout<<"Maximum sum of Subarray is "<<maxsum<<endl;
+//
+//
+    vector<int> num = {2,7,5,6,7};
+    int target1 = 9;
+    vector<int> ans = pairSum(num, target1);
+    cout<<ans[0]<<", "<<ans[1]<<endl;
     return 0;
 }
