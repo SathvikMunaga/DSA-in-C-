@@ -1,29 +1,30 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int binary_search(vector<int> arr, int target)
+int binary_search(const vector<int>& arr, int target)
 {
-    int st = 0; int end = arr.size() - 1;
-    while(st <= end){
-        int mid = (st + end) / 2;
-        if(target < arr[mid]){
-            end = mid - 1;
-        }
-        else if(target > arr[mid]){
-            st = mid + 1;
-        }
-        else{
+    int left = 0;
+    int right = arr.size() - 1;
+
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target)
             return mid;
-        }
+        else if (arr[mid] < target)
+            left = mid + 1;
+        else
+            right = mid - 1;
     }
     return -1;
 }
 
 int main()
 {
-    vector<int> arr1 = {1,2,3,4,5,6,7};
-    int target = 5;
-    cout<<binary_search(arr1, target)<<endl;
+    vector<int> arr = {1, 2, 3, 4, 5, 6}; // sorted array
+    int target = 1;
+
+    cout << binary_search(arr, target) << endl;
 }
