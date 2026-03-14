@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main(){
     //converting decimal umbers into binary numbers using code
